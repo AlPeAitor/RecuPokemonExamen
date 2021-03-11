@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Mochila">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <ImageView fx:id="pocion1" fitHeight="114.0" fitWidth="104.0" layoutX="14.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Imagenes/pocion1.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="label1" layoutX="228.0" layoutY="42.0" text="Restaura 10 puntos de vida" />
+                <Button fx:id="button1" layoutX="527.0" layoutY="31.0" mnemonicParsing="false" onAction="#curacion1" text="Usar" />
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <children>
+                <Button fx:id="button2" layoutX="524.0" layoutY="38.0" mnemonicParsing="false" onAction="#curacion2" text="Usar" />
+                <ImageView fitHeight="104.0" fitWidth="159.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Imagenes/pocion2.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="228.0" layoutY="42.0" text="Restaura 20 puntos de vida" />
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+            <children>
+                <Button fx:id="button3" layoutX="523.0" layoutY="38.0" mnemonicParsing="false" onAction="#curacion3" text="Usar" />
+                <ImageView fitHeight="102.0" fitWidth="131.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Imagenes/pocion3.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="206.0" layoutY="50.0" text="Restaura un 10% de la vida máxima" />
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+            <children>
+                <Button fx:id="button4" layoutX="523.0" layoutY="38.0" mnemonicParsing="false" onAction="#curacion4" text="Usar" />
+                <ImageView fitHeight="85.0" fitWidth="153.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Imagenes/pocion4.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="206.0" layoutY="42.0" text="Restaura un 20% de la vida máxima" />
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>
