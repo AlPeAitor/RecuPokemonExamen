@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -19,6 +20,16 @@ public class Controller {
 
     int vidaAMandar = 0;
     static int seleccion = 0;
+    int desc=0;
+    private Detalles detalles;
+
+    String descP1="Hola, soy Bulbasaur";
+    String descP2="Hola, soy Squirtle";
+    String descP3="Hola, soy Charmander";
+    String descP4="Hola, soy Pikachu";
+    String descP5="Hola, soy Diglett";
+    String descP6="Hola, soy Articuno";
+
 
 
     //pokemon1
@@ -109,6 +120,24 @@ public class Controller {
     @FXML
     public Button button1;
 
+    @FXML
+    public ImageView fav1;
+
+    @FXML
+    public ImageView fav2;
+
+    @FXML
+    public ImageView fav3;
+
+    @FXML
+    public ImageView fav4;
+
+    @FXML
+    public ImageView fav5;
+
+    @FXML
+    public ImageView fav6;
+
 
     private final Pokemon pk1 = new Pokemon("Bulbasaur", 200, 21);
     private final Pokemon pk2 = new Pokemon("Squirtle", 250, 30);
@@ -138,6 +167,14 @@ public class Controller {
         datosPokemon(nombreP6, nvP6, vidaNumerica6, pk6);
         psP6.setProgress((float)pk6.getVidaActual()/pk6.getVidaMaxima());
 
+        fav1.setOpacity(0);
+        fav2.setOpacity(0);
+        fav3.setOpacity(0);
+        fav4.setOpacity(0);
+        fav5.setOpacity(0);
+        fav6.setOpacity(0);
+
+
     }
 
     public void datosPokemon(Label nombre, Label nivel, Label vida, Pokemon pk){
@@ -148,7 +185,8 @@ public class Controller {
     @FXML
     private void onButtonAction(ActionEvent event) throws IOException{
 
-        if(pk1.getVidaActual()<pk1.getVidaMaxima() || pk2.getVidaActual() < pk2.getVidaMaxima() || pk3.getVidaActual() < pk3.getVidaMaxima() || pk4.getVidaActual() < pk4.getVidaMaxima() || pk5.getVidaActual() < pk5.getVidaMaxima() || pk6.getVidaActual() < pk6.getVidaMaxima()) {
+        if (seleccion==0) {
+        }else if(pk1.getVidaActual()<pk1.getVidaMaxima() || pk2.getVidaActual() < pk2.getVidaMaxima() || pk3.getVidaActual() < pk3.getVidaMaxima() || pk4.getVidaActual() < pk4.getVidaMaxima() || pk5.getVidaActual() < pk5.getVidaMaxima() || pk6.getVidaActual() < pk6.getVidaMaxima()) {
             try {
                 Stage stage = new Stage();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Mochila.fxml"));
@@ -172,6 +210,54 @@ public class Controller {
             customAlert.getDialogPane().getButtonTypes().addAll(ButtonType.FINISH);
             showAlert(customAlert);
         }
+    }
+
+    @FXML
+    private void onButtonDetallesAction(ActionEvent event) throws IOException{
+
+        if (seleccion==0) {
+        }else {
+            try {
+                Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Detalles.fxml"));
+                GridPane root = (GridPane) loader.load();
+                Scene scene = new Scene(root, 570, 400);
+                stage.setResizable(false);
+                stage.setScene(scene);
+                stage.show();
+
+                Detalles controller = loader.getController();
+                controller.mandarInfoDesdeVentana1(vidaAMandar, desc);
+                controller.setVentana1(this);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public void marcarFav(){
+        switch (seleccion){
+            case 1:
+                fav1.setOpacity(1);
+                break;
+            case 2:
+                fav2.setOpacity(1);
+                break;
+            case 3:
+                fav3.setOpacity(1);
+                break;
+            case 4:
+                fav4.setOpacity(1);
+                break;
+            case 5:
+                fav5.setOpacity(1);
+                break;
+            case 6:
+                fav6.setOpacity(1);
+                break;
+        }
+
     }
 
     public void recibirCura(int x){
@@ -244,6 +330,10 @@ public class Controller {
         nombreP4.setTextFill(Color.BLACK);
         nombreP5.setTextFill(Color.BLACK);
         nombreP6.setTextFill(Color.BLACK);
+        desc=1;
+        detalles.cambiarDesc(1);
+
+
     }
 
     @FXML
@@ -258,6 +348,8 @@ public class Controller {
         nombreP4.setTextFill(Color.BLACK);
         nombreP5.setTextFill(Color.BLACK);
         nombreP6.setTextFill(Color.BLACK);
+        desc=2;
+        detalles.cambiarDesc(2);
     }
 
     @FXML
@@ -272,6 +364,8 @@ public class Controller {
         nombreP4.setTextFill(Color.BLACK);
         nombreP5.setTextFill(Color.BLACK);
         nombreP6.setTextFill(Color.BLACK);
+        desc=3;
+        detalles.cambiarDesc(3);
     }
 
     @FXML
@@ -286,6 +380,8 @@ public class Controller {
         nombreP4.setTextFill(Color.BLUE);
         nombreP5.setTextFill(Color.BLACK);
         nombreP6.setTextFill(Color.BLACK);
+        desc=4;
+        detalles.cambiarDesc(4);
     }
 
     @FXML
@@ -300,6 +396,8 @@ public class Controller {
         nombreP4.setTextFill(Color.BLACK);
         nombreP5.setTextFill(Color.BLUE);
         nombreP6.setTextFill(Color.BLACK);
+        desc=5;
+        detalles.cambiarDesc(5);
     }
 
     @FXML
@@ -314,7 +412,11 @@ public class Controller {
         nombreP4.setTextFill(Color.BLACK);
         nombreP5.setTextFill(Color.BLACK);
         nombreP6.setTextFill(Color.BLUE);
+        desc=6;
+        detalles.cambiarDesc(6);
     }
+
+    //public void cambiarDesc(ActionEvent event){detalles.cambiarDesc();}
 
 
     private void showAlert(Alert alert) throws IOException {

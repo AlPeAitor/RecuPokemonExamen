@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,6 +39,11 @@
                     </font>
                 </Label>
                 <ProgressBar fx:id="psP1" layoutX="72.0" layoutY="161.0" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="fav1" fitHeight="25.0" fitWidth="35.0" layoutX="189.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/estrella.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
         <Button fx:id="button1" mnemonicParsing="false" onAction="#onButtonAction" text="Boton" GridPane.columnIndex="2" GridPane.rowIndex="2" />
@@ -65,6 +70,11 @@
                </font>
             </Label>
             <ProgressBar fx:id="psP2" layoutX="67.0" layoutY="163.0" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="fav2" fitHeight="25.0" fitWidth="35.0" layoutX="207.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/estrella.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
          <children>
@@ -89,6 +99,11 @@
                </font>
             </Label>
             <ProgressBar fx:id="psP3" layoutX="65.0" layoutY="159.0" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="fav3" fitHeight="25.0" fitWidth="35.0" layoutX="205.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/estrella.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -110,6 +125,11 @@
             </Label>
             <Label layoutX="21.0" layoutY="155.0" text="PS" />
             <ProgressBar fx:id="psP4" layoutX="70.0" layoutY="155.0" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="fav4" fitHeight="25.0" fitWidth="35.0" layoutX="193.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/estrella.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
@@ -130,6 +150,11 @@
             </Label>
             <Label layoutX="18.0" layoutY="156.0" text="PS" />
             <ProgressBar fx:id="psP5" layoutX="59.0" layoutY="155.0" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="fav5" fitHeight="25.0" fitWidth="35.0" layoutX="197.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/estrella.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <children>
@@ -150,6 +175,12 @@
             </Label>
             <Label layoutX="17.0" layoutY="156.0" text="PS" />
             <ProgressBar fx:id="psP6" layoutX="67.0" layoutY="156.0" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="fav6" fitHeight="25.0" fitWidth="35.0" layoutX="210.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/estrella.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
+      <Button fx:id="button2" alignment="CENTER" mnemonicParsing="false" onAction="#onButtonDetallesAction" text="Detalles" GridPane.rowIndex="2" />
     </children>
 </GridPane>
