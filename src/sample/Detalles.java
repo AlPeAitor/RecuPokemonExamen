@@ -12,6 +12,7 @@ public class Detalles {
     //no esta lo de cambiar imagen segun el seleccionado por falta de tiempo, pero seria mandar la imagen segun el pokemon sleccionado
     // (la imagen no pertenece a la clase pokemon, entonces no puede hacer asi)
     //y despues hacer que la imageview de la pantalla de detalles muestre dicha imagen
+    //lo mismo con la descripcion, pero a ultima hora me ha dado un error que no he conseguido solucionar antes de la entrega
 
     int vida = 0;
     int desc = 0;
@@ -66,6 +67,7 @@ public class Detalles {
         principal.recibirInformacion("Ejecutada escena de detalles");
         principal.recibirInformacion("vida mandada: " + vida);
         principal.recibirInformacion("desc mandada: " + desc);
+        cambiarDesc(desc);
 
     }
 }
