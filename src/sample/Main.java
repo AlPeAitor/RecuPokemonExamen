@@ -22,6 +22,7 @@ public class Main extends Application {
             escena = primaryStage;
             escena.setTitle("Pokemon");
             escena.setScene(new Scene(root, 1000, 576));
+            escena.setResizable(false);
             escena.show();
         } catch (IOException e){
             e.printStackTrace();
