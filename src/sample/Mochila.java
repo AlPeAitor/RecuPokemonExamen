@@ -22,20 +22,13 @@ public class Mochila {
     public ImageView pocion1;
 
 
-    // @FXML
-    public void curacion1(ActionEvent event){
-
-        //principal = controller;
-        principal.recibirCura(10);
-    }
+    public void curacion1(ActionEvent event){ principal.recibirCura(10); }
 
     public void curacion2(ActionEvent event){
         principal.recibirCura(20);
     }
 
-    public void curacion3(ActionEvent event){
-        principal.recibirCura((int)(vida*0.1));
-    }
+    public void curacion3(ActionEvent event){ principal.recibirCura((int)(vida*0.1)); }
 
     public void curacion4(ActionEvent event){
         principal.recibirCura((int)(vida*0.2));
