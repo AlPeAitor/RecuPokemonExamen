@@ -167,7 +167,7 @@ public class Controller {
         }
         else{
             Alert customAlert = new Alert(Alert.AlertType.NONE);
-            customAlert.setTitle("¡Enhorabuena!");
+            customAlert.setTitle("¡Enhorabuena, ha curado a todos sus Pokemons!");
 
             customAlert.getDialogPane().getButtonTypes().addAll(ButtonType.FINISH);
             showAlert(customAlert);
